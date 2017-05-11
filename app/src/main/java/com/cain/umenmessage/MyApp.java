@@ -103,14 +103,14 @@ public class MyApp extends Application{
          * UmengNotificationClickHandler是在BroadcastReceiver中被调用，故
          * 如果需启动Activity，需添加Intent.FLAG_ACTIVITY_NEW_TASK
          * */
-        UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
+        /*UmengNotificationClickHandler notificationClickHandler = new UmengNotificationClickHandler() {
             @Override
             public void dealWithCustomAction(Context context, UMessage msg) {
                 Toast.makeText(context, msg.custom, Toast.LENGTH_LONG).show();
             }
-        };
+        };*/
         //使用自定义的NotificationHandler，来结合友盟统计处理消息通知，参考http://bbs.umeng.com/thread-11112-1-1.html
-        //CustomNotificationHandler notificationClickHandler = new CustomNotificationHandler();
+        CustomNotificationHandler notificationClickHandler = new CustomNotificationHandler();
         mPushAgent.setNotificationClickHandler(notificationClickHandler);
 
 
